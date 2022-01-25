@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: keycloak
+      name: keycloak
   replicas: 1  
   template:
     metadata:
