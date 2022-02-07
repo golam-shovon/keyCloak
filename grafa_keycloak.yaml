@@ -26,6 +26,9 @@ grafana.ini:
       auth_url: "http://137.226.248.193:31250/auth/realms/grafana_relam/protocol/openid-connect/auth"
       token_url: "http://137.226.248.193:31250/auth/realms/grafana_relam/protocol/openid-connect/token"
       api_url: "http://137.226.248.193:31250/auth/realms/grafana_relam/protocol/openid-connect/userinfo"
+      allow_sign_up: true
+      email_attribute_name: email
+      scopes: "openid profile email"
 
 adminUser: demo
 adminPassword: demo
