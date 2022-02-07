@@ -1,0 +1,36 @@
+service:
+  type: NodePort
+  nodePort: 31230
+
+datasources: 
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: InfluxDB
+      type: influxdb
+      url: http://influxdb:8086
+      access: proxy
+      database: telegraf
+      user: telegraf
+      password: telegraf
+      jsonData:
+        httpMode: GET
+grafana.ini:
+    server:
+      root_url: http://137.226.248.193:31230/
+    auth.generic_oauth:
+      enabled: true
+      name: "login_keycloak"
+      client_id: "grafana"
+      client_secret: "q1vYjPVZCSKkS0GKLcxrL0lt597baR3H"
+      auth_url: "http://137.226.248.193:31250/auth/realms/grafana_relam/protocol/openid-connect/auth"
+      token_url: "http://137.226.248.193:31250/auth/realms/grafana_relam/protocol/openid-connect/token"
+      api_url: "http://137.226.248.193:31250/auth/realms/grafana_relam/protocol/openid-connect/userinfo"
+
+adminUser: demo
+adminPassword: demo
+
+sidecar:
+  dashboards:
+    enabled: true
+    label: grafana_dashboard
