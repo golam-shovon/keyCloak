@@ -16,6 +16,9 @@ datasources:
       jsonData:
         httpMode: GET
 grafana.ini:
+    auth:
+      signout_redirect_url: "http://137.226.248.193:31250/auth/realms/grafana_realm/protocol/openid-connect/logout?redirect_uri=http%3A%2F%2F137.226.248.193%3A31230%2Flogin"
+
     server:
       root_url: http://137.226.248.193:31230/
     auth.generic_oauth:
